@@ -4,7 +4,8 @@
 #          A01748931 Bruno Omar Jimenez Mancilla
 #          A01748559 Roberto Castro Barrios
 # File name: table_generator.rb
-
+#The source code containde in this file demonstrates how to implement the <em> Template method pattern</em>.
+#The superclass that will be used as a 'skeleton'
 class TableGenerator
 
   def initialize(header, data)
