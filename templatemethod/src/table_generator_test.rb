@@ -4,13 +4,13 @@
 #          A01748931 Bruno Omar Jimenez Mancilla
 #          A01748559 Roberto Castro Barrios
 # File name: table_generator_test.rb
-
+#The source code contained in this file is used to test the code in table_generator.rb
 require 'minitest/autorun'
 require 'table_generator.rb'
 require 'student'
-
+# Creates the class TableGeneraorTest that inherits from the class Minitest::Test.
 class TableGeneratorTest < Minitest::Test
-
+  #Creates all the data that will be used for the test
   def setup
     @headerEmpty = []
     @dataEmpty = []
@@ -44,7 +44,7 @@ class TableGeneratorTest < Minitest::Test
                                  "Manjula Nahasapeemapetilon",
                                  [53, 72, 88])]
   end
-
+  #Test the CSVTableGenerator class defined at table_generator.rb
   def test_CSVTableGenerator
     assert_equal \
       "Snap,Crackle,Pop\n" +
@@ -65,7 +65,7 @@ class TableGeneratorTest < Minitest::Test
       CSVTableGenerator.new(@headerStudents,
                             @dataStudents).generate
   end
-
+  #Test the HTMLableGenerator class defined at table_generator.rb
   def test_HTMLTableGenerator
     assert_equal \
       "<table>\n" +
@@ -98,7 +98,7 @@ class TableGeneratorTest < Minitest::Test
       HTMLTableGenerator.new(@headerStudents,
                              @dataStudents).generate
   end
-
+  #Test the ASCIIDocTableGenerator class defined at table_generator.rb
   def test_AsciiDocTableGenerator
     assert_equal \
       "[options=\"header\"]\n" +
