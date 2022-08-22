@@ -20,8 +20,9 @@ To test the program, inside the +src+ folder type the following instruction at t
     ruby -I . -w table_generator_test.rb
 
 == References
-- \A. Ortiz. <em>ArielOrtiz.info</em> {https://arielortiz.info/apps/s202211/tc3049/programming_templatemethod/}[https://arielortiz.info/apps/s202211/tc3049/programming_templatemethod/] Accesed August 20th, 2022.
+- \A. Ortiz. <em>ArielOrtiz.info</em> {https://arielortiz.info/apps/s202211/tc3049/programming_templatemethod/}[https://arielortiz.info/apps/s202211/tc3049/programming_templatemethod/] Accesed August 20, 2022.
 
-- GeekfoGeeks. <em>Template method design pattern</em> {https://www.geeksforgeeks.org/template-method-design-pattern/}[https://www.geeksforgeeks.org/template-method-design-pattern/] Accessed August 17, 2017.
+- GeekfoGeeks. <em>Template method design pattern</em> {https://www.geeksforgeeks.org/template-method-design-pattern/}[https://www.geeksforgeeks.org/template-method-design-pattern/] Accessed August 20, 2022.
 
+- \Terrance Koar. <em>Inject Method Explained</em> {https://medium.com/@terrancekoar/inject-method-explained-ed531eff9af8}[https://medium.com/@terrancekoar/inject-method-explained-ed531eff9af8] Accessed August 20, 2022.
 
