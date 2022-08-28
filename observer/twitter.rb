@@ -1,44 +1,46 @@
-# Observer Method Pattern
-# Date: 06-Mar-2022
+# Observer Pattern
+# Date: 22-Aug-2022
 # Authors:
-#          A01376398 Oscar Macias
-#          A01748632 Michel Dionne
-
+#          A01748931 Bruno Omar Jimenez Mancilla
+#          A01748559 Roberto Castro Barrios
 # File name: twitter.rb
 
 
 class Twitter
   attr_reader :name
   attr_reader :mytweet, :observers
-  
-# the initializer of the clase which needs the name to create it
+
+# The constructor of the class it receives a name and creates an empty string
+#called tweet and an empty array of observers
  def initialize(name)
    @name = name
    @observers = []
    @tweet = ""
   end
-  
-#This functions lets the user tweet something (puts)
-#and also notifies everyone subscribed(following) the person
+
+#This function assigns the new tweet to the variable mytweet and also calls the
+#notify followers function
   def tweet(new_tweet)
     @mytweet = new_tweet
     notify_followers()
   end
 
-#lets a person follow or observe another acount
+#'subscribes' itself to the user passed as a parameter
  def follow(user)
     user.observers << self
     self
   end
 
-#function to let all observers and update them when the account tweeted
+#This function notifys all of the observers of the user every time a new tweet
+#is generated
   def notify_followers()
     @observers.each do |follower|
         follower.update(self)
     end
   end
 
-#The uodate aplied to the observers, in this case is a messaje
+#This function notifies the user when a person that he/she is following
+#'posts' a new tweet
 def update(sender)
    puts("#{self.name} received a tweet from #{sender.name}: #{sender.mytweet}")
  end
