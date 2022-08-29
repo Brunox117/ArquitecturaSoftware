@@ -5,7 +5,8 @@
 #          A01748559 Roberto Castro Barrios
 # File name: twitter.rb
 
-
+#The source code in this file implements the observer pattern as a 'twitter'
+#class also three variables are declared as attributes readers
 class Twitter
   attr_reader :name
   attr_reader :mytweet, :observers
