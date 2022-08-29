@@ -19,10 +19,10 @@ class Twitter
   end
 
 #This function assigns the new tweet to the variable usrtweet and also calls the
-#notify followers function
+#notify subscribers function
   def tweet(new_tweet)
     @usrtweet = new_tweet
-    notify_followers()
+    notify_subscribers()
   end
 
 #'subscribes' itself to the user passed as a parameter
@@ -33,9 +33,9 @@ class Twitter
 
 #This function notifys all of the observers of the user every time a new tweet
 #is generated
-  def notify_followers()
-    @observers.each do |follower|
-        follower.update(self)
+  def notify_subscribers()
+    @observers.each do |sub|
+        sub.update(self)
     end
   end
 
