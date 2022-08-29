@@ -8,8 +8,7 @@
 #The source code in this file implements the observer pattern as a 'twitter'
 #class also three variables are declared as attributes readers
 class Twitter
-  attr_reader :name
-  attr_reader :mytweet, :observers
+  attr_reader :name, :usrtweet, :observers
 
 # The constructor of the class it receives a name and creates an empty string
 #called tweet and an empty array of observers
@@ -19,10 +18,10 @@ class Twitter
    @tweet = ""
   end
 
-#This function assigns the new tweet to the variable mytweet and also calls the
+#This function assigns the new tweet to the variable usrtweet and also calls the
 #notify followers function
   def tweet(new_tweet)
-    @mytweet = new_tweet
+    @usrtweet = new_tweet
     notify_followers()
   end
 
@@ -43,6 +42,6 @@ class Twitter
 #This function notifies the user when a person that he/she is following
 #'posts' a new tweet
 def update(sender)
-   puts("#{self.name} received a tweet from #{sender.name}: #{sender.mytweet}")
+   puts("#{self.name} received a tweet from #{sender.name}: #{sender.usrtweet}")
  end
 end
