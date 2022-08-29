@@ -1,16 +1,16 @@
 # Observer Pattern
 # Date: 22-Aug-2022
 # Authors:
-#          A01748931 Bruno Omar Jimenez Mancilla 
-#          A01748559 Roberto Castro Barrios 
+#          A01748931 Bruno Omar Jimenez Mancilla
+#          A01748559 Roberto Castro Barrios
 # File name: twitter_test.rb
 
 require 'minitest/autorun'
 require 'stringio'
 require 'twitter'
-
+#The source code in this file is used to test the twitter.rb file
 class TwitterTest < Minitest::Test
-
+  #Defines the variables that are going to be used to make the tests
   def setup
     @out = StringIO.new
     @old_stdout = $stdout
@@ -20,7 +20,8 @@ class TwitterTest < Minitest::Test
   def teardown
     $stdout = @old_stdout
   end
-
+  #Creates all the data that is going to be used in the test
+  #The users and its tweets are inspired in alices adventures in wonderland
   def test_twitter_alices_adventures_in_wonderland
     a = Twitter.new('Alice')
     k = Twitter.new('King')
@@ -54,7 +55,8 @@ class TwitterTest < Minitest::Test
         "We're all mad here.\n",                                \
       @out.string
   end
-
+  #Creates all the data that is going to be used in the test
+  #The users and its tweets are inspired in star wars
   def test_twitter_star_wars
     y = Twitter.new('Yoda')
     o = Twitter.new('Obi-Wan Kenobi')
