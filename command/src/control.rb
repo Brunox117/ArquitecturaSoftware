@@ -4,8 +4,11 @@
 #          A01748931 Bruno Omar Jimenez Mancilla
 #          A01748559 Roberto Castro Barrios
 # File name: control.rb
+#The source code in this file implements the command pattern as a remote controller
+#Class that simulates a remote controller
 class RemoteControlWithUndo
-
+    #Initializes the class with two arrays and assigns to both of them 7 no commands objects 
+    #also creates a variable called undo_command assigned to no_command
     def initialize
       @on_commands = []
       @off_commands = []
@@ -16,26 +19,28 @@ class RemoteControlWithUndo
       end
       @undo_command = no_command
     end
-
+    #Assigns an on_command and an off_command passed thorugh a slot that also is received 
     def set_command(slot, on_command, off_command)
       @on_commands[slot] = on_command
       @off_commands[slot] = off_command
     end
-
+    #receives an index that is used in on_commands array and calls the execute function in that object
+    #also assigns that object to undo_command 
     def on_button_was_pushed(slot)
       @on_commands[slot].execute
       @undo_command = @on_commands[slot]
     end
-
+    #receives an index that is used in off_commands array and calls the execute function in that object
+    #also assigns that object to undo_command 
     def off_button_was_pushed(slot)
       @off_commands[slot].execute
       @undo_command = @off_commands[slot]
     end
-
+    #executes the undo function on the object assigned to the undo_command variable
     def undo_button_was_pushed()
       @undo_command.undo
     end
-
+    #prints all the slots with its assigned buttons
     def inspect
       string_buff = ["\n------ Remote Control -------\n"]
       @on_commands.zip(@off_commands) \
@@ -50,33 +55,42 @@ class RemoteControlWithUndo
     end
 
 end
-
+  #Class used as a dummy it does nothing but saves steps in the implementation
   class NoCommand
-
+  #Does nothing
   def execute
   end
+  #Does nothing
   def undo
   end
 
   end
+#Class used by the remote controller to turn the light on
 class LightOnCommand
+    #Receives an object light
     def initialize(light_on)
       @light = light_on
     end
+    #Executes on function in the light received in the initializer
     def execute
       @light.on
     end
+    #Executes off function in the light received in the initializer
     def undo
       @light.off
     end
 end
+#Class used by the remote controller to turn the light off
 class LightOffCommand
+  #Receives an object light
   def initialize(light_off)
     @light_off = light_off
   end
+  #Executes off function in the light received in the initializer
   def execute
     @light_off.off
   end
+  #Executes on function in the light received in the initializer
   def undo
     @light_off.on
   end
