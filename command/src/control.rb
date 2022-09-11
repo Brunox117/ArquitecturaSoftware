@@ -113,16 +113,82 @@ end
 class CeilingFanHighCommand
   def initialize(fan)
     @fan = fan
+    @prev_speed = @fan.speed
+  end
+  def execute
+    @prev_speed = @fan.speed
+    @fan.high
+  end
+  def undo
+    if @prev_speed == CeilingFan::HIGH
+      @fan.high
+    else
+    if @prev_speed == CeilingFan::MEDIUM
+      @fan.medium
+    else
+    if @prev_speed == CeilingFan::LOW
+      @fan.low
+    else
+    if @prev_speed == CeilingFan::OFF
+      @fan.off
+    end
+    end
+    end
+    end
   end
 end
 class CeilingFanMediumCommand
   def initialize(fan)
     @fan = fan
+    @prev_speed = @fan.speed
+  end
+  def execute
+    @prev_speed = @fan.speed
+    @fan.medium
+  end
+  def undo
+    if @prev_speed == CeilingFan::HIGH
+      @fan.high
+    else
+    if @prev_speed == CeilingFan::MEDIUM
+      @fan.medium
+    else
+    if @prev_speed == CeilingFan::LOW
+      @fan.low
+    else
+    if @prev_speed == CeilingFan::OFF
+      @fan.off
+    end
+    end
+    end
+    end
   end
 end
 class CeilingFanOffCommand
   def initialize(fan)
     @fan = fan
+    @prev_speed = @fan.speed
+  end
+  def execute
+    @prev_speed = @fan.speed
+    @fan.off
+  end
+  def undo
+  if @prev_speed == CeilingFan::HIGH
+      @fan.high
+  else
+    if @prev_speed == CeilingFan::MEDIUM
+      @fan.medium
+    else
+    if @prev_speed == CeilingFan::LOW
+      @fan.low
+    else
+    if @prev_speed == CeilingFan::OFF
+      @fan.off
+    end
+    end
+    end
+  end
   end
 end
   class CeilingFan
