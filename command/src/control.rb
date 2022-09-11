@@ -95,25 +95,26 @@ class LightOffCommand
     @light_off.on
   end
 end
+  #Class that creates a light it also has an attr_reader with the level of light
   class Light
 
     attr_reader :level
-
+    #Initializer of the class it receives a location and assign level to 0
     def initialize(location)
       @location = location
       @level = 0
     end
-
+    #Assigns level to 100 and prints that the light is on
     def on
       @level = 100
       puts "Light is on"
     end
-
+    #Assigns level to 0 and prints that the light is off
     def off
       @level = 0
       puts "Light is off"
     end
-
+    #Prints the state of level
     def dim(level)
       @level = level
       if level == 0
@@ -124,15 +125,19 @@ end
     end
 
   end
+#Class used to assign the high speed to a ceiling fan
 class CeilingFanHighCommand
+  #Initialized the class by receiving a fan also a variable prev_speed is declared with the current speed of the fan
   def initialize(fan)
     @fan = fan
     @prev_speed = @fan.speed
   end
+  #Sets the fan speed to high and the save the previous state in prev_speed variable
   def execute
     @prev_speed = @fan.speed
     @fan.high
   end
+  #Uses prev_speed variable to set the speed of the fan as it was before execute button was pushed
   def undo
     if @prev_speed == CeilingFan::HIGH
       @fan.high
@@ -151,6 +156,7 @@ class CeilingFanHighCommand
     end
   end
 end
+#Class used to assign the medium speed to a ceiling fan
 class CeilingFanMediumCommand
   def initialize(fan)
     @fan = fan
