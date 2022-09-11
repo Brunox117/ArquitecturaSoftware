@@ -158,14 +158,17 @@ class CeilingFanHighCommand
 end
 #Class used to assign the medium speed to a ceiling fan
 class CeilingFanMediumCommand
+  #Initialized the class by receiving a fan also a variable prev_speed is declared with the current speed of the fan
   def initialize(fan)
     @fan = fan
     @prev_speed = @fan.speed
   end
+  #Sets the fan speed to medium and the save the previous state in prev_speed variable
   def execute
     @prev_speed = @fan.speed
     @fan.medium
   end
+  #Uses prev_speed variable to set the speed of the fan as it was before execute button was pushed
   def undo
     if @prev_speed == CeilingFan::HIGH
       @fan.high
@@ -184,15 +187,19 @@ class CeilingFanMediumCommand
     end
   end
 end
+#Class used to turn off a ceiling fan
 class CeilingFanOffCommand
+  #Initialized the class by receiving a fan also a variable prev_speed is declared with the current speed of the fan
   def initialize(fan)
     @fan = fan
     @prev_speed = @fan.speed
   end
+  #Sets the fan speed to high and the save the previous state in prev_speed variable  
   def execute
     @prev_speed = @fan.speed
     @fan.off
   end
+  #Uses prev_speed variable to set the speed of the fan as it was before execute button was pushed  
   def undo
   if @prev_speed == CeilingFan::HIGH
       @fan.high
@@ -211,6 +218,8 @@ class CeilingFanOffCommand
   end
   end
 end
+  #Class that creates a ceiling fan it also has an attr_reader with the speed of the fan and 4 constants 
+  #with the possible states of the fan
   class CeilingFan
 
     # Access these constants from outside this class as
@@ -221,27 +230,27 @@ end
     OFF    = 0
 
     attr_reader :speed
-
+    #Initializer of the class it receives a location and assign speed to OFF
     def initialize(location)
       @location = location
       @speed = OFF
     end
-
+    #Assigns fan speed to high and prints it
     def high
       @speed = HIGH
       puts "#{@location} ceiling fan is on high"
     end
-
+    #Assigns fan speed to medium and prints it    
     def medium
       @speed = MEDIUM
       puts "#{@location} ceiling fan is on medium"
     end
-
+    #Assigns fan speed to low and prints it
     def low
       @speed = LOW
       puts "#{@location} ceiling fan is on low"
     end
-
+    #Assigns fan speed to OFF and prints it
     def off
       @speed = OFF
       puts "#{@location} ceiling fan is off"
