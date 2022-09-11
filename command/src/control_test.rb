@@ -7,37 +7,37 @@
 require 'minitest/autorun'
 require 'stringio'
 require 'control'
-
+#The source code in this file is used to test control.rb file
 class ControlTest < Minitest::Test
-
+  #Creates a remotecontrol and calls other 3 functions
   def setup
     set_stdout
     @rc = RemoteControlWithUndo.new
     set_light
     set_fan
   end
-
+  #calls reset_stdout function
   def teardown
     reset_stdout
   end
-
+  #sets a string 
   def set_stdout
     @out = StringIO.new
     @old_stdout = $stdout
     $stdout = @out
   end
-
+  #reset the stdout string
   def reset_stdout
     $stdout = @old_stdout
   end
-
+  #Creates a light object, a light on/off objects and pass them to the controller
   def set_light
     light = Light.new("Living Room")
     light_on = LightOnCommand.new(light)
     light_off = LightOffCommand.new(light)
     @rc.set_command(0, light_on, light_off)
   end
-
+  #Creates a fan object, fan high/medium/off objects and pass them to the controller
   def set_fan
     fan = CeilingFan.new("Living Room")
     fan_medium = CeilingFanMediumCommand.new(fan)
@@ -46,7 +46,7 @@ class ControlTest < Minitest::Test
     @rc.set_command(1, fan_medium, fan_off)
     @rc.set_command(2, fan_high, fan_off)
   end
-
+  #Test the light object with the controller
   def test_light
     @rc.on_button_was_pushed(0)
     @rc.off_button_was_pushed(0)
@@ -82,7 +82,7 @@ class ControlTest < Minitest::Test
       "[undo] LightOnCommand\n\n"                               \
       "Light is off\n", @out.string
   end
-
+  #Test fan with the controller
   def test_fan
     @rc.on_button_was_pushed(1)
     @rc.off_button_was_pushed(1)
