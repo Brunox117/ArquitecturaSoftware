@@ -1,3 +1,8 @@
+# Adapter pattern
+# Date: 24-Sept-2022
+# Authors:
+#          A01748931 Bruno Omar Jimenez Mancilla 
+#          A01748559 Roberto Castro Barrios 
 # File: adapter_test.rb 
 
 require 'minitest/autorun'
