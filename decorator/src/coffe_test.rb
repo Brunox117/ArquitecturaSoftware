@@ -1,8 +1,8 @@
 # Decorator Pattern
 # Date: 03-Oct-2022
 # Authors:
-#          A01160611 Thursday Rubinstein 
-#          A01777771 Stephen Strange
+#          A01748931 Bruno Omar Jimenez Mancilla 
+#          A01748559 Roberto Castro Barrios
 # File: coffee_test.rb
 require 'minitest/autorun'
 require 'coffee'
