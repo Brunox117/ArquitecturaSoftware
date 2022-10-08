@@ -1,3 +1,8 @@
+# Domain-Specific Language Pattern
+# Date: 22-Aug-2022
+# Authors:
+#          A01748931 Bruno Omar Jimenez Mancilla 
+#          A01748559 Roberto Castro Barrios 
 # File: jankenpon_test.rb
 
 require 'minitest/autorun'
