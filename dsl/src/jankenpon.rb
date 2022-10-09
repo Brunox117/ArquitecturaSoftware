@@ -16,7 +16,7 @@ class Jankenpon
 end
 #The class rock shows the winning and losing cases of itself in the game, overrides Jankenpon.
 class Rock < Jankenpon
-    #AQUI ME QUEDE
+    #AQUI ME QUEDE-------------------------------------------------------------------------------------
     def + rpsls
         if(rpsls == Scissors)
             puts "Rock crushes Scissors (winner Rock)"
