@@ -16,7 +16,7 @@ class Jankenpon
 end
 #The class rock shows the winning and losing cases of itself in the game, overrides Jankenpon.
 class Rock < Jankenpon
-    #AQUI ME QUEDE-------------------------------------------------------------------------------------
+    #Returns results for the winning cases
     def + rpsls
         if(rpsls == Scissors)
             puts "Rock crushes Scissors (winner Rock)"
@@ -32,7 +32,7 @@ class Rock < Jankenpon
         end
     end
 
-    # Return the losing play
+    #Returns results for the losing cases 
     def - rpsls
         if(rpsls == Spock)
             puts "Spock vaporizes Rock (loser Rock)"
@@ -47,16 +47,16 @@ class Rock < Jankenpon
             return rpsls - self
         end
     end
-    # Return the result.
+    #Return the result.
     def res
         return "Rock"
     end
 end
-#Asigning the Constant Rock to a new Rock class.
+#Create a rock object to use it in the test. 
 Rock = Rock.new
-# Specific implementation of Paper in the DSL.
+#The class paper shows the winning and losing cases of itself in the game, overrides Jankenpon.
 class Paper < Jankenpon
-    # Returns the winning play
+     #Returns results for the winning cases
     def + rpsls
         if(rpsls == Spock)
             puts "Paper disproves Spock (winner Paper)"
@@ -72,7 +72,7 @@ class Paper < Jankenpon
         end
     end
 
-    # Return the losing play
+    #Returns results for the losing cases
     def - rpsls
         if(rpsls == Lizard)
             puts "Lizard eats Paper (loser Paper)"
@@ -92,13 +92,11 @@ class Paper < Jankenpon
         return "Paper"
     end
 end
-#Asigning the Constant Paper to a new Paper class.
+#Create a paper object to use it in the test.
 Paper = Paper.new
-
-
-# Specific implementation of Scissors in the DSL.
+#The class scissors shows the winning and losing cases of itself in the game, overrides Jankenpon.
 class Scissors < Jankenpon
-    # Returns the winning play
+     #Returns results for the winning cases
     def + rpsls
         if(rpsls == Paper)
             puts "Scissors cut Paper (winner Scissors)"
@@ -113,8 +111,7 @@ class Scissors < Jankenpon
             return rpsls + self
         end
     end
-
-    # Return the losing play
+    #Returns results for the losing cases
     def - rpsls
         if(rpsls == Rock)
             puts "Rock crushes Scissors (loser Scissors)"
@@ -135,11 +132,11 @@ class Scissors < Jankenpon
     end
 
 end
-#Asigning the Constant Scissors to a new Scissor class.
+#Create a scissors object to use it in the test.
 Scissors = Scissors.new
-# Specific implementation of Lizard in the DSL.
+#The class Lizard shows the winning and losing cases of itself in the game, overrides Jankenpon.
 class Lizard < Jankenpon
-    # Returns the winning play
+     #Returns results for the winning cases
     def + rpsls
         if(rpsls == Spock)
             puts "Lizard poisons Spock (winner Lizard)"
@@ -154,7 +151,7 @@ class Lizard < Jankenpon
             return rpsls + self
         end
     end
-    # Return the losing play
+    #Returns results for the losing cases
     def - rpsls
         if(rpsls == Rock)
             puts "Rock crushes Lizard (loser Lizard)"
@@ -174,11 +171,11 @@ class Lizard < Jankenpon
         return "Lizard"
     end
 end
-#Asigning the Constant Lizard to a new Lizard class.
+#Create a lizard object to use it in the test.
 Lizard = Lizard.new
-# Specific implementation of Spock in the DSL.
+#The class spock shows the winning and losing cases of itself in the game, overrides Jankenpon.
 class Spock < Jankenpon
-    # Returns the winning play
+     #Returns results for the winning cases
     def + rpsls
         if(rpsls == Scissors)
             puts "Spock smashes Scissors (winner Spock)"
@@ -193,7 +190,7 @@ class Spock < Jankenpon
             return rpsls + self
         end
     end
-    # Return the losing play
+    #Returns results for the losing cases
     def - rpsls
         if(rpsls == Paper)
             puts "Paper disproves Spock (loser Spock)"
@@ -208,15 +205,14 @@ class Spock < Jankenpon
             return rpsls - self
         end
     end
-
     # Return the result.
     def res
         return "Spock"
     end
 end
-#Asigning the Constant Spock to a new Spock class.
+#Create a spock object to use it in the test.
 Spock = Spock.new
-# This method outputs the re
+#Prints the result
 def show other
     puts "Result = " + other.res
 end
