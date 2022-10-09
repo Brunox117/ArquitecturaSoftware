@@ -8,9 +8,9 @@
 require 'minitest/autorun'
 require 'stringio'
 require 'jankenpon'
-
+# Class used to test the jankenpon file
 class JakenponTest < Minitest::Test
-
+  #Set up of the class
   def setup
     @old_stdout = $stdout
     @out = $stdout = StringIO.new
@@ -19,7 +19,7 @@ class JakenponTest < Minitest::Test
   def teardown
     $stdout = @old_stdout
   end
-
+  #Tests basic cases of the game using the "winning function"
   def test_simple_cases_plus
     assert_equal Scissors, (Scissors + Paper)
     assert_equal Scissors, (Paper + Scissors)
@@ -47,7 +47,7 @@ class JakenponTest < Minitest::Test
     assert_equal Lizard,   (Lizard + Lizard)
     assert_equal Spock,    (Spock + Spock)
   end
-
+  #Tests basic cases of the game using the "loser function"
   def test_simple_cases_minus
     assert_equal Paper,    (Scissors - Paper)
     assert_equal Paper,    (Paper - Scissors)
@@ -75,7 +75,7 @@ class JakenponTest < Minitest::Test
     assert_equal Lizard,   (Lizard - Lizard)
     assert_equal Spock,    (Spock - Spock)
   end
-
+  #Test the output of spock
   def test_dsl_1
     #---------
     show Spock
@@ -83,7 +83,7 @@ class JakenponTest < Minitest::Test
     assert_equal \
       "Result = Spock\n", @out.string
   end
-
+  #Test the string of the class
   def test_dsl_2
     #------------------
     show Spock + Lizard
@@ -93,7 +93,7 @@ class JakenponTest < Minitest::Test
       "Result = Lizard\n", \
       @out.string
   end
-
+   #Test the string of the class
   def test_dsl_3
     #------------------
     show Spock - Lizard
@@ -103,7 +103,7 @@ class JakenponTest < Minitest::Test
       "Result = Spock\n", \
       @out.string
   end
-
+   #Test the string of the classes
   def test_dsl_4
     #-------------------------
     show Spock + Lizard + Rock
@@ -114,7 +114,7 @@ class JakenponTest < Minitest::Test
       "Result = Rock\n", \
       @out.string
   end
-
+   #Test the string of the classes
   def test_dsl_5
     #---------------------------
     show Spock + (Lizard + Rock)
@@ -125,7 +125,7 @@ class JakenponTest < Minitest::Test
       "Result = Spock\n", \
       @out.string
   end
-
+   #Test the string of the classes
   def test_dsl_6
     #--------------------------------------------
     show Rock + Paper + Scissors + Lizard + Spock
@@ -138,7 +138,7 @@ class JakenponTest < Minitest::Test
       "Result = Spock\n", \
       @out.string
   end
-
+   #Test the string of the classes
   def test_dsl_7
     #--------------------------------------------
     show Rock - Paper - Scissors - Lizard - Spock
@@ -151,7 +151,7 @@ class JakenponTest < Minitest::Test
       "Result = Spock\n", \
       @out.string
   end
-
+   #Test the string of the classes
   def test_dsl_8
     #-------------------------------------------------
     show((Rock + Paper) - (Scissors + Lizard) + Spock)
@@ -164,7 +164,7 @@ class JakenponTest < Minitest::Test
       "Result = Paper\n", \
       @out.string
   end
-
+   #Test the string of the classes
   def test_dsl_9
     #---------------------------------------------
     show Paper + ((Spock + Paper) - Lizard + Rock)
