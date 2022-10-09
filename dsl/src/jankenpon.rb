@@ -1,16 +1,14 @@
 # File: jankenpon.rb
 # Abstract class of jankenpon to provide a common interface.
+
 class Jankenpon
     # Abstract, overridable method
     def + next_play
     end
-    
     # Abstract, overridable method
     def - next_play
     end
 end
-
-
 # Specific implementation of Rock in the DSL.
 class Rock < Jankenpon
     # Returns the winning play
@@ -24,11 +22,11 @@ class Rock < Jankenpon
         elsif (next_play == Rock)
             puts "Rock tie (winner Rock)"
             return self
-        else 
+        else
             return next_play + self
         end
     end
-    
+
     # Return the losing play
     def - next_play
         if(next_play == Spock)
@@ -40,17 +38,17 @@ class Rock < Jankenpon
         elsif (next_play == Rock)
             puts "Rock tie (loser Rock)"
             return next_play
-        else 
+        else
             return next_play - self
         end
     end
-    
     # Return the result.
     def res
         return "Rock"
     end
-end 
-
+end
+#Asigning the Constant Rock to a new Rock class.
+Rock = Rock.new
 # Specific implementation of Paper in the DSL.
 class Paper < Jankenpon
     # Returns the winning play
@@ -64,11 +62,11 @@ class Paper < Jankenpon
         elsif (next_play == Paper)
             puts "Paper tie (winner Paper)"
             return next_play
-        else 
+        else
             return next_play + self
         end
     end
-    
+
     # Return the losing play
     def - next_play
         if(next_play == Lizard)
@@ -80,7 +78,7 @@ class Paper < Jankenpon
         elsif (next_play == Paper)
             puts "Paper tie (loser Paper)"
             return self
-        else 
+        else
             return next_play - self
         end
     end
@@ -88,7 +86,10 @@ class Paper < Jankenpon
     def res
         return "Paper"
     end
-end 
+end
+#Asigning the Constant Paper to a new Paper class.
+Paper = Paper.new
+
 
 # Specific implementation of Scissors in the DSL.
 class Scissors < Jankenpon
@@ -103,11 +104,11 @@ class Scissors < Jankenpon
         elsif (next_play == Scissors)
             puts "Scissors tie (winner Scissors)"
             return next_play
-        else 
+        else
             return next_play + self
         end
     end
-    
+
     # Return the losing play
     def - next_play
         if(next_play == Rock)
@@ -127,9 +128,10 @@ class Scissors < Jankenpon
     def res
         return "Scissors"
     end
-    
-end 
 
+end
+#Asigning the Constant Scissors to a new Scissor class.
+Scissors = Scissors.new
 # Specific implementation of Lizard in the DSL.
 class Lizard < Jankenpon
     # Returns the winning play
@@ -143,11 +145,10 @@ class Lizard < Jankenpon
         elsif (next_play == Lizard)
             puts "Lizard tie (winner Lizard)"
             return self
-         else 
+        else
             return next_play + self
         end
     end
-
     # Return the losing play
     def - next_play
         if(next_play == Rock)
@@ -159,7 +160,7 @@ class Lizard < Jankenpon
         elsif (next_play == Lizard)
             puts "Lizard tie (loser Lizard)"
             return self
-         else 
+        else
             return next_play - self
         end
     end
@@ -167,8 +168,9 @@ class Lizard < Jankenpon
     def res
         return "Lizard"
     end
-end 
-
+end
+#Asigning the Constant Lizard to a new Lizard class.
+Lizard = Lizard.new
 # Specific implementation of Spock in the DSL.
 class Spock < Jankenpon
     # Returns the winning play
@@ -182,11 +184,10 @@ class Spock < Jankenpon
         elsif (next_play == Spock)
             puts "Spock tie (winner Spock)"
             return self
-        else 
+        else
             return next_play + self
         end
     end
-    
     # Return the losing play
     def - next_play
         if(next_play == Paper)
@@ -202,25 +203,16 @@ class Spock < Jankenpon
             return next_play - self
         end
     end
-    
+
     # Return the result.
     def res
         return "Spock"
     end
-end 
-
-# This method outputs the re
-def show other
-    puts "Result = " + other.res 
 end
-
-#Asigning the Constant Rock to a new Rock class.
-Rock = Rock.new
-#Asigning the Constant Paper to a new Paper class.
-Paper = Paper.new
-#Asigning the Constant Scissors to a new Scissor class.
-Scissors = Scissors.new
-#Asigning the Constant Lizard to a new Lizard class.
-Lizard = Lizard.new
 #Asigning the Constant Spock to a new Spock class.
 Spock = Spock.new
+# This method outputs the re
+def show other
+    puts "Result = " + other.res
+end
+
