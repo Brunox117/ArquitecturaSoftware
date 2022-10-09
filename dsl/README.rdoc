@@ -22,4 +22,4 @@ To test the program, inside the +src+ folder type the following instruction at t
 == References
 - \A. Ortiz. <em>ArielOrtiz.info</em> {https://arielortiz.info/apps/s202213/tc3049/programming_dsl/}[https://arielortiz.info/apps/s202213/tc3049/programming_dsl/] Accesed October 07, 2022.
 
-- Refactoring guru. <em>Command</em> {https://refactoring.guru/es/design-patterns/command}[https://refactoring.guru/es/design-patterns/command] Accessed September 10, 2022.
+- Toughtbot. <em>Writing a Domain-Specific Language in Ruby</em> {https://thoughtbot.com/blog/writing-a-domain-specific-language-in-ruby}[https://thoughtbot.com/blog/writing-a-domain-specific-language-in-ruby] Accessed October 07, 2022.
