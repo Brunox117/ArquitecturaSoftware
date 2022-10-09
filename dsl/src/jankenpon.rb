@@ -1,6 +1,10 @@
+# Domain-Specific-Language Pattern
+# Date: 07-Oct-2022
+# Authors:
+#          A01748931 Bruno Omar Jimenez Mancilla 
+#          A01748559 Roberto Castro Barrios 
 # File: jankenpon.rb
 # Abstract class of jankenpon to provide a common interface.
-
 class Jankenpon
     # Abstract, overridable method
     def + next_play
